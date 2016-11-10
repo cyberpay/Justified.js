@@ -16,12 +16,12 @@ pre code {
   line-height: 1.5;
 }
 .container {
-  width: 1130px;
+  /*width: 1130px;*/
   padding: 0 20px;
   margin: 0px auto;
 }
 .text-container {
-  width: 900px;
+  /*width: 900px;*/
   position: relative;
   margin: 0px auto;
 }
@@ -111,7 +111,7 @@ section.demo .form-vertical {
   float: left;
 }
 section.demo .image-container {
-  margin-left: 200px;
+  /*margin-left: 200px;*/
   padding: 1px;
   border: 1px solid #eee;
 }

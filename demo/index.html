@@ -3,64 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Justified.js</title>
-    <meta name="description" content="jQuery Plugin to create Justified Image Gallery">
+    <meta name="description" content="jQuery Plugin to create resizable Justified Image Gallery">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="prism/prism.css">
     <link rel="stylesheet" href="../jquery.justified.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,300' rel='stylesheet' type='text/css'>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-    <section class="pane header">
-        <div class="header">
-            <h1>Justified.js</h1>
-            <h2>jQuery Plugin to create Justified Image Gallery</h2>
-        </div>
-        <footer>
-            <div class="left">
-                <a href="http://twitter.com/share" class="twitter-share-button" data-url="https://github.com/nitinhayaran/Justified.js" data-text="Justified.js - jQuery Plugin to create Justified Image Gallery" data-count="none" data-via="nitinhayaran">Tweet</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <iframe src="http://ghbtns.com/github-btn.html?user=nitinhayaran&amp;repo=Justified.js&amp;type=watch&amp;count=false&amp;size=small"
-                  allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
-            </div>
-            <div class="right">
-                <a href="https://twitter.com/nitinhayaran" class="twitter-follow-button" data-show-count="false">Follow @nitinhayaran</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <iframe src="http://ghbtns.com/github-btn.html?user=nitinhayaran&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="153" height="20"></iframe>
-            </div>
-        </footer>
-    </section>
     <section class="body demo">
         <div class="container">
             <h2>See it in Action</h2>
-            <h3>Play around with the demo</h3>
-            <div class="demo-container clearfix">
-                <form class="form-vertical" id="grid-form" role="form">
-                  <div class="form-group">
-                    <label for="numPhotos" class="col-sm-4 control-label">Number of Photo</label>
-                    <input type="number" min=1 max=500 step=1 value="20" class="form-control" id="numPhotos">
-                  </div>
-                  <div class="form-group">
-                    <label for="minHeight" class="col-sm-4 control-label">Row Height</label>
-                    <input type="number" min=100 max=600 step=10 value="150" class="form-control" id="minHeight">
-                  </div>
-                  <div class="form-group">
-                    <label for="maxHeight" class="col-sm-4 control-label">Maximum Row Height</label>
-                    <input type="number" min=500 max=1000 step=10 value="500" class="form-control" id="maxHeight">
-                  </div>
-                  <div class="form-group">
-                    <label for="margin" class="col-sm-4 control-label">Margin</label>
-                    <input type="number" min=0 max=5 step=1 value="1" class="form-control" id="margin">
-                  </div>
-                  <div class="form-group">
-
-                      <button type="submit" class="btn btn-default">Refresh Grid</button>
-
-                  </div>
-                </form>
-                <div class="image-container"></div>
-            </div>
+            <h3>Play around with the demo (resize)</h3>
+            <div class="image-container"></div>
             <div class="text-container">
                 <h2>About Justified.js</h2>
                 <h3>jQuery Plugin to Create Justified Images Grid</h3>
@@ -204,7 +160,7 @@
                 </table>
 
                 <div class="footer">
-                    <a href="https://github.com/nitinhayaran/Justified.js" class="large-github">Get it from Github</a>
+                    <a href="https://github.com/kelostrada/Justified.js" class="large-github">Get it from Github</a>
                 </div>
             </div>
         </div>
@@ -228,7 +184,7 @@
         </div>
     </section>
     <script src="prism/prism.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
 
     <script src="../jquery.justified.js"></script>
     <script type="text/javascript">
@@ -238,34 +194,32 @@
             <div title="Undo Delete" class="undo-button image-button tooltip"><i class="fa fa-undo"></i></div>\
             <img alt="<%=photo.title%>" class="image-thumb lazy" src="<%=photo.src%>" style="width:<%=photo.displayWidth%>px;height:<%=photo.displayHeight%>px;">\
         </div>');
+        var photos = [];
         $(document).ready(function(){
-            $('#grid-form').submit(function(e){
-                e.preventDefault();
-                $.ajax({
-                    url : 'https://api.flickr.com/services/rest/?jsoncallback=?',
-                    method: 'get',
-                    data : {
-                        method : 'flickr.photos.search',
-                        api_key : '2b76793b6787a09c14929811d2cef67e',
-                        text : 'potrait',
-                        sort : 'interestingness-desc',
-                        format : 'json',
-                        extras : 'url_t,url_s,url_q,url_m,url_n,url_z,url_c,url_l',
-                        per_page : $('#numPhotos').val()
-                    },
-                    dataType: 'json',
-                    success : function(data){
-                        showPhotos(data.photos.photo);
-                    }
-                })
-            });
-            $('#grid-form').submit();
+            $.ajax({
+                url : 'https://api.flickr.com/services/rest/?jsoncallback=?',
+                method: 'get',
+                data : {
+                    method : 'flickr.photos.search',
+                    api_key : '2b76793b6787a09c14929811d2cef67e',
+                    text : 'potrait',
+                    sort : 'interestingness-desc',
+                    format : 'json',
+                    extras : 'url_t,url_s,url_q,url_m,url_n,url_z,url_c,url_l',
+                    per_page : 20
+                },
+                dataType: 'json',
+                success : function(data){
+                    photos = data.photos.photo;
+                    showPhotos();
+                }
+            })
         });
-        var showPhotos = function(photos){
+        var showPhotos = function(){
             $('.image-container').empty().justifiedImages({
                 images : photos,
-                rowHeight: $('#minHeight').val(),
-                maxRowHeight: $('#maxHeight').val(),
+                rowHeight: 200,
+                maxRowHeight: 500,
                 thumbnailPath: function(photo, width, height){
                     var purl = photo.url_s;
                     if( photo.url_n && (width > photo.width_s * 1.2 || height > photo.height_s * 1.2) ) purl = photo.url_n;
@@ -291,6 +245,9 @@
                 }*/
             });
         }
+        $( window ).resize(function() {
+            showPhotos();
+        });
     </script>
 </body>
 </html>
