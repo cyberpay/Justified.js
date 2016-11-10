@@ -88,7 +88,7 @@
                 totalWidth += block.width;
             });
             var perRowWidth = totalWidth / Math.ceil(totalWidth / w);
-            console.log('rows', Math.ceil(totalWidth / w));
+            //console.log('rows', Math.ceil(totalWidth / w));
             var tw = 0;
             while (baseLine < limit) {
                 var row = {
@@ -113,7 +113,7 @@
                 baseLine += c;
                 rows.push(row);
             }
-            console.log(rows.length, rows);
+            //console.log(rows.length, rows);
             /*for (var i = 1; i < rows.length; i++) {
                 var row = rows[i];
                 for (var j = 0; j < row.photos.length; j++) {
