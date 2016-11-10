@@ -16,12 +16,10 @@ pre code {
   line-height: 1.5;
 }
 .container {
-  /*width: 1130px;*/
   padding: 0 20px;
   margin: 0px auto;
 }
 .text-container {
-  /*width: 900px;*/
   position: relative;
   margin: 0px auto;
 }
@@ -49,8 +47,6 @@ section.header footer {
   width: 100%;
   bottom: 0;
   padding: 10px 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .left {
@@ -68,8 +64,6 @@ div.header {
   position: absolute;
   top: 40%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-radius: 5px;
 }
@@ -100,9 +94,6 @@ section.demo h3 {
   font-size: 28px;
   margin: 0.8em 0 1em;
 }
-section.demo .demo-container {
-  margin: 40px 0 80px;
-}
 section.demo .text-container h2 {
   margin-top: 3em;
 }
@@ -111,7 +102,6 @@ section.demo .form-vertical {
   float: left;
 }
 section.demo .image-container {
-  /*margin-left: 200px;*/
   padding: 1px;
   border: 1px solid #eee;
 }
@@ -129,14 +119,12 @@ section.demo input {
   border: 1px solid #999;
   border-width: 0 0 1px 0;
   padding: 3px 0 3px;
-  -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
 section.demo input:focus,
 section.demo input:active {
   outline: none;
   border-color: #2fc7ff;
-  -webkit-box-shadow: 0 1px 3px -3px #2fc7ff;
   box-shadow: 0 1px 3px -3px #2fc7ff;
   color: #000;
 }
@@ -156,14 +144,10 @@ section.demo button {
   cursor: pointer;
   outline: none;
   background-color: #ececec;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ececec));
-  background-image: -webkit-linear-gradient(#f4f4f4, #ececec);
   background-image: linear-gradient(#f4f4f4, #ececec);
-  -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border-radius: 0.2em;
   zoom: 1;
-  -webkit-transition: background-image 0.3s;
   transition: background-image 0.3s;
 }
 section.demo button:hover,
@@ -174,8 +158,6 @@ section.demo button:active {
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
   color: #fff;
   background-color: #3c8dde;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#599bdc), to(#3072b3));
-  background-image: -webkit-linear-gradient(#599bdc, #3072b3);
   background-image: linear-gradient(#599bdc, #3072b3);
 }
 section.demo p {
