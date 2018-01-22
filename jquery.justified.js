@@ -67,7 +67,8 @@
                 photos = this.options.images,
                 rows = [],
                 totalWidth = 0,
-                appendBlocks = this.options.appendBlocks();
+                appendBlocks = this.options.appendBlocks(),
+                ratio = window.devicePixelRatio;
             var w = this.$el.width();
             var border = parseInt(this.options.margin, 10);
             var d = this.$el,
@@ -87,7 +88,7 @@
             $.each(appendBlocks, function(index, block){
                 totalWidth += block.width;
             });
-            var perRowWidth = totalWidth / Math.ceil(totalWidth / w);
+            var perRowWidth = totalWidth / Math.ceil(totalWidth / w) / ratio;
             //console.log('rows', Math.ceil(totalWidth / w));
             var tw = 0;
             while (baseLine < limit) {
