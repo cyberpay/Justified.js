@@ -2,20 +2,12 @@ var photos = [];
 /* Download images from flickr */
 $(document).ready(function(){
     $.ajax({
-        url : 'https://api.flickr.com/services/rest/?jsoncallback=?',
+        url : '/photos.json',
         method: 'get',
-        data : {
-            method : 'flickr.photos.search',
-            api_key : '2b76793b6787a09c14929811d2cef67e',
-            text : 'potrait',
-            sort : 'interestingness-desc',
-            format : 'json',
-            extras : 'url_t,url_s,url_q,url_m,url_n,url_z,url_c,url_l',
-            per_page : 20
-        },
         dataType: 'json',
         success : function(data){
             photos = data.photos.photo;
+            console.log(photos);
             showPhotos();
         }
     })
