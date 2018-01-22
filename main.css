@@ -267,9 +267,9 @@ section.footer a {
 }
 .nav li {
   font-family: 'Raleway', sans-serif;
-  font-size: 0.9em;
-  line-height: 40px;
-  height: 40px;
+  font-size: 2.5em;
+  line-height: 80px;
+  height: 80px;
   border-bottom: 1px solid #888;
 }
 .nav a {
@@ -285,7 +285,21 @@ section.footer a {
   color: #7fafaf;
   cursor: default;
 }
-@media screen and (min-width: 600px) {
+@media screen and (max-device-width: 500px) {
+  section.demo h2 {
+    font-size: 4em;
+  }
+  section.demo h3 {
+    font-size: 3em;
+  }
+  section.demo h4 {
+    font-size: 2em;
+  }
+  section.footer {
+    font-size: 2em;
+  }
+}
+@media screen and (min-device-width: 500px) {
   .nav li {
     width: 120px;
     border-bottom: none;

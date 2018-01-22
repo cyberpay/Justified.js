@@ -27,8 +27,8 @@ $(document).ready(function() {
 var showPhotos = function() {
   $('.image-container').empty().justifiedImages({
     images: photos[category],
-    rowHeight: 200,
-    maxRowHeight: 500,
+    rowHeight: 300,
+    maxRowHeight: 1000,
     thumbnailPath: function(photo, width, height) {
       var purl = photo.url;
       return purl;
